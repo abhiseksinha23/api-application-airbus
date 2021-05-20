@@ -14,7 +14,7 @@ app.use(express.json());
 //////////DBMS setup/////////////////////////////////////////////////
 
 const uri = "mongodb+srv://abhisekkumar:passcode23@internproject-zscmu.mongodb.net/Airbus?retryWrites=true&w=majority";
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 const { detailsSchema } = require('./schema/details');
 const details = mongoose.model("details", detailsSchema);
@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 //Complete display
 
 app.get("/details", (req, res) => {
-    details.find({}).toArray((err, pr) => {
+    details.find({}, (err, pr) => {
         if (err) {
             res.status(500).json({ error: err })
             console.log(err);
@@ -149,7 +149,7 @@ app.delete("/details/:id/", (req, res) => {
 // Input - Title + Details
 
 app.get("/improvement", (req, res) => {
-    improvement.find({}).toArray((err, pr) => {
+    improvement.find({}, (err, pr) => {
         if (err) {
             res.status(500).json({ error: err })
             console.log(err);
