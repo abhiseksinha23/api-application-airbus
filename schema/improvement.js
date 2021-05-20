@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const improvementSchema = new mongoose.Schema({
-    topic: String,
-    detail: String
+    topic: { type: String, required: true },
+    detail: { type: String, required: true }
 });
 
 module.exports = {

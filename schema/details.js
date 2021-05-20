@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const detailsSchema = new mongoose.Schema({
-    topic: String,
+    topic: { type: String, required: true },
     // image: String,
-    description: String
+    description: { type: String, required: true }
 });
 
 module.exports = {
