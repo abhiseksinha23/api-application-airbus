@@ -35,8 +35,8 @@ app.get("/", (req, res) => {
 app.get("/details", (req, res) => {
     details.find({}, (err, pr) => {
         if (err) {
-            res.status(500).json({ error: "error occured" })
-            console.log(err);
+            res.status(500).json({ error: err })
+
         } else {
             res.status(200).json({ data: pr });
         }
