@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 app.get("/details", (req, res) => {
     details.find({}, (err, pr) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: pr });
@@ -55,7 +55,7 @@ app.post("/find/", (req, res) => {
 
     details.find({ topic: topic }, (err, pr) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: pr });
@@ -72,7 +72,7 @@ app.get("/find/", (req, res) => {
 
     details.find({ topic: topic }, (err, pr) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: pr });
@@ -97,7 +97,7 @@ app.post("/details", (req, res) => {
     details.create(pr, (err, newly) => {
             if (err) {
                 console.log(err);
-                res.status(500).json({ error: err });
+                res.status(500).json({ error: "error occured" });
             } else {
                 res.status(200).json({ data: newly });
             }
@@ -119,7 +119,7 @@ app.put("/details/:id/", (req, res) => {
 
     details.findByIdAndUpdate(req.params.id, pr, (err, found) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: found });
@@ -134,7 +134,7 @@ app.delete("/details/:id/", (req, res) => {
 
     details.findByIdAndRemove(req.params.id, (err) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: "deleted" });
@@ -151,7 +151,7 @@ app.delete("/details/:id/", (req, res) => {
 app.get("/improvement", (req, res) => {
     improvement.find({}, (err, pr) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: pr });
@@ -178,7 +178,7 @@ app.post("/improvement", (req, res) => {
     improvement.create(pr, (err, newly) => {
             if (err) {
                 console.log(err);
-                res.status(500).json({ error: err });
+                res.status(500).json({ error: "error occured" });
             } else {
                 res.status(200).json({ data: newly });
             }
@@ -194,7 +194,7 @@ app.get("/improvement/:id", (req, res) => {
 
     improvement.findById(req.params.id, (err, imp) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured " })
             console.log(err);
         } else {
             res.status(200).json({ data: imp });
@@ -215,7 +215,7 @@ app.put("/improvement/:id/", (req, res) => {
 
     improvement.findByIdAndUpdate(req.params.id, pr, (err, found) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: found });
@@ -230,7 +230,7 @@ app.delete("/improvement/:id/", (req, res) => {
 
     improvement.findByIdAndRemove(req.params.id, (err) => {
         if (err) {
-            res.status(500).json({ error: err })
+            res.status(500).json({ error: "error occured" })
             console.log(err);
         } else {
             res.status(200).json({ data: "deleted" });
