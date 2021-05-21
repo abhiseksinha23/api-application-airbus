@@ -1,0 +1,5 @@
+Open command prompt in the folder.
+Run command -  npm install
+
+After installing 
+Run command - nodemon index.js
