@@ -1,0 +1,7 @@
+It's an API for performing complete crud operations related to -
+
+Application navigation(searchable tool) 
+
+And for Application improvement and co-creation
+
+of the Cadbury Bot.
